@@ -8,6 +8,7 @@ This project contains UVM with RTL of UART IP CORE 16550A.
 Files are commited into github as sections select different branches for clear understanding how I developed Verification in UVM.
 I put forward as stages, 
    - #### stage 1 --> Topology Print [select Topology branch]
+   - #### stage 2 --> Full Duplex Sequence [select Full Duplex branch]
 ***
 
 ## stage 1 --> Topology
