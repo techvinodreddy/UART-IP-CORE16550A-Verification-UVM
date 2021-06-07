@@ -4,13 +4,10 @@ class xtn extends uvm_sequence_item;
     `uvm_object_utils(xtn)  // factory registration
 
   // --> Members
-    rand bit [7:0]  wb_dat_i;    // 1  8 --> data bus select
-    rand bit [2:0] wb_3_i;   // 2
-    rand bit             wb_we_i;     // 3
-    rand bit 		 wb_stb_i;
-    rand bit 		 wb_cyc_i;
-    rand bit 		 wb_sel_i;
-    logic 		 wb_rst_i;
+    rand logic [7:0]  wb_dat_i;    // 1  8 --> data bus select
+    rand logic [2:0] wb_addr_i;   // 2
+    rand logic             wb_we_i;     // 3
+    
 
   // --> Internal Registers
     bit [7:0]IER;   // Interrupt Enable Register (IER)            1
@@ -42,7 +39,7 @@ function void xtn::do_print(uvm_printer printer);
 
   // --> printing transaction data
     printer.print_field("wb_dat_i",   this.wb_dat_i,   8, UVM_DEC);
-    printer.print_field("wb_3_i",  this.wb_3_i,  3, UVM_DEC);
+    printer.print_field("wb_addr_i",  this.wb_addr_i,  3, UVM_DEC);
     printer.print_field("wb_we_i",    this.wb_we_i,    1, UVM_DEC);
 
     foreach(THR[i])
@@ -54,12 +51,10 @@ function void xtn::do_print(uvm_printer printer);
     printer.print_field("LCR",        this.LCR,        8, UVM_DEC);
     printer.print_field("MCR",        this.MCR,        8, UVM_DEC);
     printer.print_field("MSR",        this.MSR,        8, UVM_DEC);
-    printer.print_field("LCR",        this.LCR,        8, UVM_DEC);
     printer.print_field("LSR",        this.LSR,        8, UVM_DEC);
     printer.print_field("FCR",        this.FCR,        8, UVM_DEC);
     printer.print_field("IIR",        this.IIR,        8, UVM_DEC);
     printer.print_field("IER",        this.IER,        8, UVM_DEC);
-    printer.print_field("IIR",        this.IIR,        8, UVM_DEC);
     printer.print_field("DL1",        this.DL1,        8, UVM_DEC);
     printer.print_field("DL2",        this.DL2,        8, UVM_DEC);
 

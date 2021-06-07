@@ -42,7 +42,7 @@ run_test:sv_cmp
 
 	
 run_test1:
-	vsim -cvgperinstance $(VSIMOPT) $(VSIMCOV) $(VSIMBATCH2)  -wlf wave_file2.wlf -l test2.log  -sv_seed random  work.top +UVM_TESTNAME=uart_fd_test
+	vsim -cvgperinstance $(VSIMOPT) $(VSIMCOV) $(VSIMBATCH2)  -wlf wave_file2.wlf -l test2.log  -sv_seed random  work.top +UVM_TESTNAME=fd_test
 	vcover report  -cvg  -details -nocompactcrossbins -codeAll -assert -directive -html uart_cov2
 	
 run_test2:

@@ -17,7 +17,7 @@ interface uart_if(input bit clock);
     logic                wb_stb_i;       // Specifies transfer cycle
     logic                wb_cyc_i;       // A bus cycle is in progress
     logic                wb_ack_i;       // Acknowledge of a transfer
-    bit                  wb_clk_i;       // clock
+    
 
 /* ---------------------------- other Interface ---------------------------------- */
     logic           int_o;          // Interrupt output
@@ -46,6 +46,7 @@ interface uart_if(input bit clock);
         input wb_ack_i;
         input wb_dat_o;
         input int_o;
+        input baud_o;
     endclocking : drv_cb
 
     clocking mon_cb @(posedge clock);   // monitor clocking block
@@ -60,6 +61,7 @@ interface uart_if(input bit clock);
         input wb_ack_i;
         input wb_dat_o;
         input int_o;
+        input baud_o;
     endclocking : mon_cb
 
 /* ---------------------------- modport ---------------------------------- */
