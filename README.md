@@ -3,6 +3,9 @@ The UART (Universal Asynchronous Receiver/Transmitter) core provides serial  com
 
 This is Half Duplex 
 
+Output
+---
+
 ```systemverilog
 # The Value In The Tx FIFO in DUT1 is : 7
 #
