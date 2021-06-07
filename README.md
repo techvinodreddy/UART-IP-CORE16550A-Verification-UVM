@@ -9,6 +9,7 @@ Files are commited into github as sections select different branches for clear u
 I put forward as stages, 
    - #### stage 1 --> Topology Print [select Topology branch]
    - #### stage 2 --> Full Duplex Sequence [select Full Duplex branch]
+   - #### stage 3 --> Half Duplex Sequence [select Half Duplex branch]
 ***
 
 ## stage 1 --> Topology
