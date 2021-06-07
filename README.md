@@ -4,6 +4,25 @@ The UART (Universal Asynchronous Receiver/Transmitter) core provides serial  com
 ## This is Full Duplex Test Case
 In here the UART-1 and UART-2 both are sending and receive the data at same time.
 
+Output
+---
+```systemverilog
+# The Value In The Tx FIFO in DUT1 is : 7
+#
+# The Value In The Tx FIFO in DUT2 is : 10
+#
+#
+#
+#
+#
+# The Value In The Rx FIFO in DUT1 is : 10
+#
+# The Value In The Rx FIFO in DUT2 is : 7
+#
+# UVM_INFO ../tb/scoreboard.sv(64) @ 17003000: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
+# UVM_INFO ../tb/scoreboard.sv(69) @ 17003000: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
+```
+
 To work this we want to write sequence that can write/read data to/from register's.
 
 First send the DL value to both UART's.
