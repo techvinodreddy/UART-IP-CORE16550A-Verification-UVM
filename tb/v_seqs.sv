@@ -80,3 +80,29 @@ task v_hd_seq::body();
     hd_seq_2_h.start(seqr_h[1]);
   join
 endtask : body
+
+class v_lb_seq extends v_base_seq;
+  `uvm_object_utils(v_lb_seq)
+
+  lb_seq_1 hd_seq_1_h;
+  lb_seq_2 hd_seq_2_h;
+
+  extern function new(string name = "v_lb_seq");
+  extern task body();
+endclass : v_lb_seq
+
+function v_lb_seq::new(string name = "v_lb_seq");
+  super.new(name);
+endfunction : new
+
+task v_lb_seq::body();
+  super.body();
+  hd_seq_1_h = lb_seq_1::type_id::create("hd_seq_1_h");
+  hd_seq_2_h = lb_seq_2::type_id::create("hd_seq_2_h");
+
+  if(e_cfg.has_agt_top)
+  fork
+    hd_seq_1_h.start(seqr_h[0]);
+    hd_seq_2_h.start(seqr_h[1]);
+  join
+endtask : body

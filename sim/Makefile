@@ -50,7 +50,7 @@ run_test2:
 	vcover report  -cvg  -details -nocompactcrossbins -codeAll -assert -directive -html uart_cov3
 	
 run_test3:
-	vsim -cvgperinstance $(VSIMOPT) $(VSIMCOV) $(VSIMBATCH4)  -wlf wave_file4.wlf -l test4.log  -sv_seed random  work.top +UVM_TESTNAME=ram_odd_addr_test
+	vsim -cvgperinstance $(VSIMOPT) $(VSIMCOV) $(VSIMBATCH4)  -wlf wave_file4.wlf -l test4.log  -sv_seed random  work.top +UVM_TESTNAME=lb_test
 	vcover report  -cvg  -details -nocompactcrossbins -codeAll -assert -directive -html uart_cov4
 	
 view_wave1:

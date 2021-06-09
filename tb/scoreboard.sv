@@ -60,13 +60,33 @@ function void scoreboard::check_phase(uvm_phase phase);
   $display("The Value In The Rx FIFO in DUT1 is : %0p \n", data1.RB[0]);
   $display("The Value In The Rx FIFO in DUT2 is : %0p \n", data2.RB[0]);
 
-  if(data1.THR[0] == data2.RB[0])
-    `uvm_info("UART 1", "Data Match in UART 1 Successfull", UVM_LOW)
-  else 
-    `uvm_info(get_type_name(), "Data Match in UART 1 UnSuccessfull", UVM_LOW)
+  $display(data1.MSR);
+  $display(data2.MSR);
 
-  if(data2.THR[0] == data1.RB[0])
-    `uvm_info("UART 2", "Data Match in UART 2 Successfull", UVM_LOW)
-  else 
-    `uvm_info(get_type_name(), "Data Match in UART 2 UnSuccessfull", UVM_LOW)
+
+  if(data1.MSR[4] == 1 || data2.MSR[4] == 1)
+    begin
+      if(data1.THR[0] == data1.RB[0])
+    `uvm_info("UART 1", "Data Match in UART 1 Successfull", UVM_LOW)
+      else 
+        `uvm_info(get_type_name(), "Data Match in UART 1 UnSuccessfull", UVM_LOW)
+
+      if(data2.THR[0] == data2.RB[0])
+        `uvm_info("UART 2", "Data Match in UART 2 Successfull", UVM_LOW)
+      else 
+        `uvm_info(get_type_name(), "Data Match in UART 2 UnSuccessfull", UVM_LOW)
+    end
+
+  else
+    begin
+      if(data1.THR[0] == data1.RB[0])
+    `uvm_info("UART 1", "Data Match in UART 1 Successfull", UVM_LOW)
+      else 
+        `uvm_info(get_type_name(), "Data Match in UART 1 UnSuccessfull", UVM_LOW)
+
+      if(data2.THR[0] == data2.RB[0])
+        `uvm_info("UART 2", "Data Match in UART 2 Successfull", UVM_LOW)
+      else 
+        `uvm_info(get_type_name(), "Data Match in UART 2 UnSuccessfull", UVM_LOW)    
+    end
 endfunction : check_phase
