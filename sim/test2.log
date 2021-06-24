@@ -1,6 +1,6 @@
 # vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit uart_cov2;run -all; exit" -wlf wave_file2.wlf -l test2.log -sv_seed random work.top "+UVM_TESTNAME=fd_test" 
-# Start time: 21:53:32 on Jun 07,2021
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 12:23:04 on Jun 24,2021
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2019.2 linux_x86_64 Apr 16 2019
 # //
@@ -33,7 +33,7 @@
 # Loading work.uart_rfifo(fast)
 # Loading /home/cad/eda/Mentor/Questa_2019/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Warning: (vsim-8634) Code was not compiled with coverage options.
-# Sv_Seed = 132738398
+# Sv_Seed = 312822609
 #  log -r /* 
 # coverage save -onexit uart_cov2
 # run -all
@@ -535,7 +535,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1073
-#   wb_dat_i   integral  8     240  
+#   wb_dat_i   integral  8     163  
 #   wb_addr_i  integral  3     'd2  
 #   wb_we_i    integral  1     'd0  
 #   THR[0]     integral  8     'd10 
@@ -555,7 +555,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1073
-#   wb_dat_i   integral  8     247  
+#   wb_dat_i   integral  8     'd96 
 #   wb_addr_i  integral  3     'd0  
 #   wb_we_i    integral  1     'd0  
 #   THR[0]     integral  8     'd10 
@@ -577,7 +577,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1079
-#   wb_dat_i   integral  8     240  
+#   wb_dat_i   integral  8     'd78 
 #   wb_addr_i  integral  3     'd2  
 #   wb_we_i    integral  1     'd0  
 #   THR[0]     integral  8     'd7  
@@ -596,7 +596,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1079
-#   wb_dat_i   integral  8     240  
+#   wb_dat_i   integral  8     'd78 
 #   wb_addr_i  integral  3     'd2  
 #   wb_we_i    integral  1     'd0  
 #   THR[0]     integral  8     'd7  
@@ -615,7 +615,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1079
-#   wb_dat_i   integral  8     182  
+#   wb_dat_i   integral  8     141  
 #   wb_addr_i  integral  3     'd0  
 #   wb_we_i    integral  1     'd0  
 #   THR[0]     integral  8     'd7  
@@ -635,7 +635,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1079
-#   wb_dat_i   integral  8     182  
+#   wb_dat_i   integral  8     141  
 #   wb_addr_i  integral  3     'd0  
 #   wb_we_i    integral  1     'd0  
 #   THR[0]     integral  8     'd7  
@@ -653,24 +653,20 @@
 # objection drouped
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 17003000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # The Value In The Tx FIFO in DUT1 is : 7 
-# 
 # The Value In The Tx FIFO in DUT2 is : 10 
-# 
-# 
-# 
-# 
-# 
 # The Value In The Rx FIFO in DUT1 is : 10 
-# 
 # The Value In The Rx FIFO in DUT2 is : 7 
-# 
-# UVM_INFO ../tb/scoreboard.sv(64) @ 17003000: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
-# UVM_INFO ../tb/scoreboard.sv(69) @ 17003000: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
+# The Value in DUT1 IIR is : 11000100 
+# The Value in DUT2 IIR is : 11000100 
+# UVM_INFO ../tb/scoreboard.sv(121) @ 17003000: uvm_test_top.env_h.sb [scoreboard] Data Match in UART 1 UnSuccessfull
+# UVM_INFO ../tb/scoreboard.sv(126) @ 17003000: uvm_test_top.env_h.sb [scoreboard] Data Match in UART 2 UnSuccessfull
+# UVM_INFO ../tb/scoreboard.sv(131) @ 17003000: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
+# UVM_INFO ../tb/scoreboard.sv(136) @ 17003000: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   25
+# UVM_INFO :   27
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -682,8 +678,9 @@
 # [UART 2]     1
 # [UVMTOP]     1
 # [mon]    18
+# [scoreboard]     2
 # ** Note: $finish    : /home/cad/eda/Mentor/Questa_2019/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 170030 ns  Iteration: 67  Instance: /top
 # Saving coverage database on exit...
-# End time: 21:53:34 on Jun 07,2021, Elapsed time: 0:00:02
+# End time: 12:23:06 on Jun 24,2021, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1

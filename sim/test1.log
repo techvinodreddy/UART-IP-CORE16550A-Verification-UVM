@@ -1,5 +1,5 @@
 # vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit uart_cov1;run -all; exit" -wlf wave_file1.wlf -l test1.log -sv_seed random work.top "+UVM_TESTNAME=base_test" 
-# Start time: 09:23:25 on Jun 05,2021
+# Start time: 12:23:01 on Jun 24,2021
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2019.2 linux_x86_64 Apr 16 2019
@@ -33,7 +33,7 @@
 # Loading work.uart_rfifo(fast)
 # Loading /home/cad/eda/Mentor/Questa_2019/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Warning: (vsim-8634) Code was not compiled with coverage options.
-# Sv_Seed = 1325308694
+# Sv_Seed = 2200258724
 #  log -r /* 
 # coverage save -onexit uart_cov1
 # run -all
@@ -123,20 +123,32 @@
 #       num_last_rsps          integral                    32    'd1  
 # --------------------------------------------------------------------
 # 
+# The Value In The Tx FIFO in DUT1 is :  
+# The Value In The Tx FIFO in DUT2 is :  
+# The Value In The Rx FIFO in DUT1 is :  
+# The Value In The Rx FIFO in DUT2 is :  
+# The Value in DUT1 IIR is : 00000000 
+# The Value in DUT2 IIR is : 00000000 
+# UVM_INFO ../tb/scoreboard.sv(119) @ 0: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
+# UVM_INFO ../tb/scoreboard.sv(124) @ 0: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
+# UVM_INFO ../tb/scoreboard.sv(131) @ 0: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
+# UVM_INFO ../tb/scoreboard.sv(136) @ 0: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    4
+# UVM_INFO :    8
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
 # [Questa UVM]     2
 # [RNTST]     1
+# [UART 1]     2
+# [UART 2]     2
 # [UVMTOP]     1
 # ** Note: $finish    : /home/cad/eda/Mentor/Questa_2019/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 0 ps  Iteration: 215  Instance: /top
 # Saving coverage database on exit...
-# End time: 09:23:26 on Jun 05,2021, Elapsed time: 0:00:01
+# End time: 12:23:02 on Jun 24,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1

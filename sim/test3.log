@@ -1,5 +1,5 @@
 # vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit uart_cov3;run -all; exit" -wlf wave_file3.wlf -l test3.log -sv_seed random work.top "+UVM_TESTNAME=hd_test" 
-# Start time: 21:53:38 on Jun 07,2021
+# Start time: 12:23:08 on Jun 24,2021
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2019.2 linux_x86_64 Apr 16 2019
@@ -33,7 +33,7 @@
 # Loading work.uart_rfifo(fast)
 # Loading /home/cad/eda/Mentor/Questa_2019/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # ** Warning: (vsim-8634) Code was not compiled with coverage options.
-# Sv_Seed = 1634299656
+# Sv_Seed = 3408218884
 #  log -r /* 
 # coverage save -onexit uart_cov3
 # run -all
@@ -515,7 +515,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1073
-#   wb_dat_i   integral  8     'd95 
+#   wb_dat_i   integral  8     'd41 
 #   wb_addr_i  integral  3     'd2  
 #   wb_we_i    integral  1     'd0  
 #   LCR        integral  8     'd3  
@@ -534,7 +534,7 @@
 # Name         Type      Size  Value
 # ----------------------------------
 # xtn_h        xtn       -     @1073
-#   wb_dat_i   integral  8     234  
+#   wb_dat_i   integral  8     'd3  
 #   wb_addr_i  integral  3     'd0  
 #   wb_we_i    integral  1     'd0  
 #   RB[0]      integral  8     'd7  
@@ -552,24 +552,20 @@
 # objection drouped
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 16318000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # The Value In The Tx FIFO in DUT1 is : 7 
-# 
-# The Value In The Tx FIFO in DUT2 is : 0 
-# 
-# 
-# 
-# 
-# 
-# The Value In The Rx FIFO in DUT1 is : 0 
-# 
+# The Value In The Tx FIFO in DUT2 is :  
+# The Value In The Rx FIFO in DUT1 is :  
 # The Value In The Rx FIFO in DUT2 is : 7 
-# 
-# UVM_INFO ../tb/scoreboard.sv(64) @ 16318000: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
-# UVM_INFO ../tb/scoreboard.sv(69) @ 16318000: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
+# The Value in DUT1 IIR is : 00000000 
+# The Value in DUT2 IIR is : 11000100 
+# UVM_INFO ../tb/scoreboard.sv(121) @ 16318000: uvm_test_top.env_h.sb [scoreboard] Data Match in UART 1 UnSuccessfull
+# UVM_INFO ../tb/scoreboard.sv(126) @ 16318000: uvm_test_top.env_h.sb [scoreboard] Data Match in UART 2 UnSuccessfull
+# UVM_INFO ../tb/scoreboard.sv(131) @ 16318000: uvm_test_top.env_h.sb [UART 1] Data Match in UART 1 Successfull
+# UVM_INFO ../tb/scoreboard.sv(136) @ 16318000: uvm_test_top.env_h.sb [UART 2] Data Match in UART 2 Successfull
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   22
+# UVM_INFO :   24
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -581,8 +577,9 @@
 # [UART 2]     1
 # [UVMTOP]     1
 # [mon]    15
+# [scoreboard]     2
 # ** Note: $finish    : /home/cad/eda/Mentor/Questa_2019/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 163180 ns  Iteration: 67  Instance: /top
 # Saving coverage database on exit...
-# End time: 21:53:39 on Jun 07,2021, Elapsed time: 0:00:01
+# End time: 12:23:09 on Jun 24,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1

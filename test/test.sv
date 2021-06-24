@@ -150,3 +150,149 @@ task lb_test::run_phase(uvm_phase phase);
   phase.drop_objection(this);
   $display("objection drouped");
 endtask : run_phase
+
+// parity sequence test
+class parity_test extends base_test;
+  `uvm_component_utils(parity_test)
+
+  v_pr_seq v_pr_seq_h;
+
+  extern function new(string name = "parity_test", uvm_component parent);
+  extern function void build_phase(uvm_phase phase);
+  extern task run_phase(uvm_phase phase);
+
+endclass : parity_test
+
+function parity_test::new(string name = "parity_test", uvm_component parent);
+  super.new(name,parent);
+endfunction : new
+
+function void parity_test::build_phase(uvm_phase phase);
+  super.build_phase(phase);
+endfunction : build_phase
+
+task parity_test::run_phase(uvm_phase phase);
+  $display("before objection raised");
+  phase.raise_objection(this);
+  v_pr_seq_h = v_pr_seq::type_id::create("v_pr_seq_h");
+  v_pr_seq_h.start(env_h.v_seqr_h);
+  phase.drop_objection(this);
+  $display("objection drouped");
+endtask : run_phase
+
+// parity sequence test
+class framing_test extends base_test;
+  `uvm_component_utils(framing_test)
+
+  v_fr_seq v_fr_seq_h;
+
+  extern function new(string name = "framing_test", uvm_component parent);
+  extern function void build_phase(uvm_phase phase);
+  extern task run_phase(uvm_phase phase);
+
+endclass : framing_test
+
+function framing_test::new(string name = "framing_test", uvm_component parent);
+  super.new(name,parent);
+endfunction : new
+
+function void framing_test::build_phase(uvm_phase phase);
+  super.build_phase(phase);
+endfunction : build_phase
+
+task framing_test::run_phase(uvm_phase phase);
+  $display("before objection raised");
+  phase.raise_objection(this);
+  v_fr_seq_h = v_fr_seq::type_id::create("v_fr_seq_h");
+  v_fr_seq_h.start(env_h.v_seqr_h);
+  phase.drop_objection(this);
+  $display("objection drouped");
+endtask : run_phase
+
+// thr empty test
+class thr_empty_test extends base_test;
+  `uvm_component_utils(thr_empty_test)
+
+  v_thr_em v_fr_seq_h;
+
+  extern function new(string name = "thr_empty_test", uvm_component parent);
+  extern function void build_phase(uvm_phase phase);
+  extern task run_phase(uvm_phase phase);
+
+endclass : thr_empty_test
+
+function thr_empty_test::new(string name = "thr_empty_test", uvm_component parent);
+  super.new(name,parent);
+endfunction : new
+
+function void thr_empty_test::build_phase(uvm_phase phase);
+  super.build_phase(phase);
+endfunction : build_phase
+
+task thr_empty_test::run_phase(uvm_phase phase);
+  $display("before objection raised");
+  phase.raise_objection(this);
+  v_fr_seq_h = v_thr_em::type_id::create("v_fr_seq_h");
+  v_fr_seq_h.start(env_h.v_seqr_h);
+  phase.drop_objection(this);
+  $display("objection drouped");
+endtask : run_phase
+
+// thr empty test
+class orr_test extends base_test;
+  `uvm_component_utils(orr_test)
+
+  v_orr v_fr_seq_h;
+
+  extern function new(string name = "orr_test", uvm_component parent);
+  extern function void build_phase(uvm_phase phase);
+  extern task run_phase(uvm_phase phase);
+
+endclass : orr_test
+
+function orr_test::new(string name = "orr_test", uvm_component parent);
+  super.new(name,parent);
+endfunction : new
+
+function void orr_test::build_phase(uvm_phase phase);
+  super.build_phase(phase);
+endfunction : build_phase
+
+task orr_test::run_phase(uvm_phase phase);
+  $display("before objection raised");
+  phase.raise_objection(this);
+  v_fr_seq_h = v_orr::type_id::create("v_fr_seq_h");
+  v_fr_seq_h.start(env_h.v_seqr_h);
+  phase.drop_objection(this);
+  $display("objection drouped");
+endtask : run_phase
+
+
+// thr empty test
+class timeout_test extends base_test;
+  `uvm_component_utils(timeout_test)
+
+  v_ti v_fr_seq_h;
+
+  extern function new(string name = "timeout_test", uvm_component parent);
+  extern function void build_phase(uvm_phase phase);
+  extern task run_phase(uvm_phase phase);
+
+endclass : timeout_test
+
+function timeout_test::new(string name = "timeout_test", uvm_component parent);
+  super.new(name,parent);
+endfunction : new
+
+function void timeout_test::build_phase(uvm_phase phase);
+  super.build_phase(phase);
+endfunction : build_phase
+
+task timeout_test::run_phase(uvm_phase phase);
+  $display("before objection raised");
+  phase.raise_objection(this);
+  v_fr_seq_h = v_ti::type_id::create("v_fr_seq_h");
+  v_fr_seq_h.start(env_h.v_seqr_h);
+  phase.drop_objection(this);
+  $display("objection drouped");
+endtask : run_phase
