@@ -133,6 +133,9 @@ Debug 1 & Debug 2
 
 ***
 
+2 Half Duplex
+---
+
 
     
     
