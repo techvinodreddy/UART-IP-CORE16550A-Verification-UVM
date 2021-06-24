@@ -12,8 +12,8 @@ Files are commited into github as sections select different branches for clear u
 List of avaliable Test Cases, & the Features 
 ---
    - 1 --> Topology Print 
-   - 2 --> Full Duplex
-   - 3 --> Half Duplex
+   - 2 --> Half Duplex
+   - 3 --> Full Duplex
    - 4 --> Loop Back
    - 5 --> Parity Error
    - 6 --> Framming Error
@@ -133,7 +133,7 @@ Debug 1 & Debug 2
 
 ***
 
-2 Half Duplex
+2 --> Half Duplex
 ---
 
 
